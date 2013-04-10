@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<title>jQuery Font Size</title>
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700">
-	<link rel="stylesheet" href="normalize.css">
-	<link rel="stylesheet" href="estilo.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/estilo.css">
 
 </head>
 <body>
@@ -93,16 +93,15 @@ $('.accessibility').fontsize({
 
 </body>
 <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-<script src="plugins.js"></script>
+<script src="js/plugins.js"></script>
 <script>
 	$(document).ready(function() {
 		prettyPrint();
 	});
 </script>
-<script src="jquery.fontsize.js"></script>
+<script src="js/jquery.fontsize.js"></script>
 <script>
-	$('body').fontsize({
-	});
+	$('body').fontsize();
 </script>
 
 </html>	
