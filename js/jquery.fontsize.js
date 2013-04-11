@@ -23,7 +23,11 @@
         defaults = {
             tags : "body, p, h1, h2, h3, h4, h5, blockquote",
             limit : 3,
-            interval: 1
+            interval: 1,
+            classIncrease: 'increase',
+            classDecrease: 'decrease',
+            idIncrease: false,
+            idDecrease: false
         };
 
     // O verdadeiro construtor do plugin
@@ -52,11 +56,22 @@
             var limit = this.options.limit;
             var tags = this.options.tags;
             var interval = this.options.interval;
+            var classIncrease = this.options.classIncrease;
+            var classDecrease = this.options.classDecrease;
+            var idIncrease = this.options.idIncrease;
+            var idDecrease = this.options.idDecrease;
 
-            $(".increase").click(function(e){   
+            //this.append('<h1>teste</h1>');
+            //console.log();
+
+            $('<a>',{ 'href': "#", 'data-size': "0", 'class': classIncrease, 'id': idIncrease }).appendTo('.accessibility').text('A+');
+            $('<a>',{ 'href': "#", 'data-size': "0", 'class': classDecrease, 'id': idDecrease }).appendTo('.accessibility').text('A-');;
+
+
+            $("."+classIncrease).click(function(e){   
                 e.preventDefault();     
                 var dataIncrease = $(this).data('size');
-                var dataDecrease = $(".decrease").data('size');
+                var dataDecrease = $("."+classDecrease).data('size');
 
                 if( dataIncrease == limit){
                     dataIncrease = limit +1;
@@ -68,8 +83,8 @@
 
                 if(dataDecrease > 0){
                     dataDecrease = 0;
-                    $(".decrease").attr('data-size', dataDecrease);
-                    $(".decrease").data('size', dataDecrease);
+                    $("."+classDecrease).attr('data-size', dataDecrease);
+                    $("."+classDecrease).data('size', dataDecrease);
                 }
 
                 if(dataIncrease <= limit){                      
@@ -82,10 +97,10 @@
                 }
             });
 
-            $(".decrease").click(function(e){
+            $("."+classDecrease).click(function(e){
                 e.preventDefault();     
                 var dataDecrease = $(this).data('size');
-                var dataIncrease = $(".increase").data('size');
+                var dataIncrease = $("."+classIncrease).data('size');
 
                 if( dataDecrease == limit){
                     dataDecrease = limit +1;
@@ -97,8 +112,8 @@
 
                 if(dataIncrease > 0){
                     dataIncrease = 0;
-                    $(".increase").attr('data-size', dataIncrease);
-                    $(".increase").data('size', dataIncrease);
+                    $("."+classIncrease).attr('data-size', dataIncrease);
+                    $("."+classIncrease).data('size', dataIncrease);
                 }
 
                 if(dataDecrease <= limit){                      
@@ -112,7 +127,7 @@
 
             });
 
-            console.log(this);
+            
         },
 
         yourOtherFunction: function(el, options) {
