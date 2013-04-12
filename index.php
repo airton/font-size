@@ -26,7 +26,7 @@
 		<p>This tool is also used to increase the accessibility of sites, helping people who have visual problems to see better content</p>
 		<div class="buttons">
 			<a href="http://www.vancindesign.com.br/plugins/fontsize/js/jquery.fontsize.rar" class="btn">Download now</a>
-			<a href="https://github.com/airton/Font-Size/fork_select" class="btn">Fork no Github</a>
+			<a href="https://github.com/airton/Font-Size/fork_select" class="btn">Fork on Github</a>
 		</div>
 
 		<h3>Demo</h3>
