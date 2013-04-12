@@ -3,9 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>jQuery Font Size</title>
+
+	<meta name="description" content="The jQuery Font Size plugin was developed to facilitate the process of creating the famous buttons A+ and A-">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="jQuery Font Size">
+	<meta property="og:site_name" content="jQuery Font Size">
+	<meta property="og:url" content="http://www.vancindesign.com.br/plugins/fontsize/">
+	<meta property="og:image" content="http://www.vancindesign.com.br/plugins/fontsize/img/fb-share.jpg">
+	<meta property="og:description" content="The jQuery Font Size plugin was developed to facilitate the process of creating the famous buttons A+ and A-">
+
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="image_src" href="http://www.vancindesign.com.br/plugins/fontsize/img/fb-share.jpg">
 
 </head>
 <body>
@@ -14,13 +25,16 @@
 		<p>The jQuery Font Size plugin was developed to facilitate the process of creating the famous buttons A+ and A-, which alter the font size on sites with very large texts, such as blogs, journals, tutorials, etc.</p>
 		<p>This tool is also used to increase the accessibility of sites, helping people who have visual problems to see better content</p>
 		<div class="buttons">
-			<a href="#" class="btn">Baixe agora</a>
+			<a href="http://www.vancindesign.com.br/plugins/fontsize/js/jquery.fontsize.rar" class="btn">Download now</a>
 			<a href="https://github.com/airton/Font-Size/fork_select" class="btn">Fork no Github</a>
 		</div>
 
 		<h3>Demo</h3>
 		<div class="box">
-			<div class="accessibility"></div>
+			<div class="accessibility">
+				<a href="#" class="increase" data-size="0">A+</a>
+				<a href="#" class="decrease" data-size="0">A-</a>
+			</div>
 			
 			<h2>Lorem ipsum dolor.</h2>
 			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa.</p>
@@ -37,12 +51,15 @@
 		<article class="code">
 			<h3>Html</h3>
 			<pre class="prettyprint lang=html">
-&lt;div class="accessibility"&gt;&lt;/div&gt;</pre>
+&lt;div class="accessibility"&gt;
+  &lt;a href="#" class="increase" data-size="0"&gt;A+&lt;/a&gt;
+  &lt;a href="#" class="decrease" data-size="0"&gt;A-&lt;/a&gt;
+&lt;/div&gt;</pre>
 		</article>
 		
 		<article class="code">
 			<h3>Script</h3>
-			<pre class="prettyprint">&lt;script src="jquery.fontsize.js"&gt;</script></pre>
+			<pre class="prettyprint">&lt;script src="jquery.fontsize.min.js"&gt;</script></pre>
 			<pre class="prettyprint">$('body').fontsize();</pre>
 			<pre class="prettyprint">
 $('body').fontsize({
@@ -51,8 +68,7 @@ $('body').fontsize({
     interval: 1,
     classIncrease: 'myClass',
     classDecrease: 'myClass',
-    idIncrease: 'myId',
-    idDecrease: 'myId'
+    transition : 900
 });</pre>
 		</article>
 
@@ -92,30 +108,45 @@ $('body').fontsize({
 					<td>Button Increase class defalut is <b>"decrease"</b> change the class according to its necessity</td>						
 				</tr>
 				<tr>
-					<td>ID button Increase</td>
-					<td>false</td>
-					<td>Button Increase ID defalut is <b>"increase"</b> change the id according to its necessity</td>					
-				</tr>
-				<tr>
-					<td>ID button Decrease</td>
-					<td>false</td>
-					<td>Button Increase ID defalut is <b>"decrease"</b> change the class according to its necessity</td>						
+					<td>Transition</td>
+					<td>800</td>
+					<td>Speed ​​at which the source increases or decreases</td>						
 				</tr>				
 			</tbody>
 		</table>
-	</div>		
+		<div class="autor">
+			<h3>Author</h3>
+			<a href="https://twitter.com/airtonvancin"><img src="https://si0.twimg.com/profile_images/1365134972/09022011_normal.jpg" alt=""></a>
+			<a href="https://twitter.com/airtonvancin">@airtonvancin</a>
 
+			<div class="license">
+				<p>Available under the <a href="http://opensource.org/licenses/mit-license.php">MIT license</a>.</p>
+				<p>Reference: <a href="http://jqueryboilerplate.com/">jQuery Boilerplate</a>.</p>
+			</div>
+		</div>
+	</div>	
+	
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script>
+		$(document).ready(function() {
+			prettyPrint();
+		});
+	</script>
+	<script src="js/jquery.fontsize.js"></script>
+	<script>$('body').fontsize();</script>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-20773260-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
 </body>
-<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-<script src="js/plugins.js"></script>
-<script>
-	$(document).ready(function() {
-		prettyPrint();
-	});
-</script>
-<script src="js/jquery.fontsize.js"></script>
-<script>
-	$('body').fontsize();
-</script>
-
 </html>	

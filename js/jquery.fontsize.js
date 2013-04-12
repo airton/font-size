@@ -1,8 +1,8 @@
 /*
  *  Project: Fontsize
  *  Description: Fontsize 
- *  Author: Airton Vancin Junior
- *  License:
+ *  Author: @airtonvancin
+ *  License: MIT
  */
 
 // o ponto-e-vírgula antes de invocar a função é uma prática segura contra scripts
@@ -23,11 +23,10 @@
         defaults = {
             tags : "body, p, h1, h2, h3, h4, h5, blockquote",
             limit : 3,
-            interval: 1,
+            interval: 2,
             classIncrease: 'increase',
             classDecrease: 'decrease',
-            idIncrease: false,
-            idDecrease: false
+            transition: 800
         };
 
     // O verdadeiro construtor do plugin
@@ -56,16 +55,14 @@
             var limit = this.options.limit;
             var tags = this.options.tags;
             var interval = this.options.interval;
-            var classIncrease = this.options.classIncrease;
+            var classIncrease = this.options.classIncrease;            
             var classDecrease = this.options.classDecrease;
-            var idIncrease = this.options.idIncrease;
-            var idDecrease = this.options.idDecrease;
+            var transition = this.options.transition;
 
-            //this.append('<h1>teste</h1>');
             //console.log();
 
-            $('<a>',{ 'href': "#", 'data-size': "0", 'class': classIncrease, 'id': idIncrease }).appendTo('.accessibility').text('A+');
-            $('<a>',{ 'href': "#", 'data-size': "0", 'class': classDecrease, 'id': idDecrease }).appendTo('.accessibility').text('A-');;
+            //$('<a>',{ 'href': "#", 'data-size': "0", 'class': classIncrease, 'id': idIncrease }).appendTo('.accessibility').html('A+');
+            //$('<a>',{ 'href': "#", 'data-size': "0", 'class': classDecrease, 'id': idDecrease }).appendTo('.accessibility').html('A-');;
 
 
             $("."+classIncrease).click(function(e){   
@@ -92,7 +89,7 @@
                         var fontSize = $(this).css("font-size");
                         var fontSize = parseFloat(fontSize);
                         var newFontSize = fontSize + interval+'px';
-                        $(this).animate({"font-size": newFontSize});
+                        $(this).animate({"font-size": newFontSize}, transition);
                     });         
                 }
             });
@@ -121,7 +118,7 @@
                         var fontSize = $(this).css("font-size");
                         var fontSize = parseFloat(fontSize);
                         var newFontSize = fontSize - interval+'px';
-                        $(this).animate({"font-size": newFontSize});
+                        $(this).animate({"font-size": newFontSize}, transition);
                     });         
                 }
 
