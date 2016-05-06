@@ -1,0 +1,15 @@
+{
+  "name": "font-size",
+  "homepage": "https://github.com/airton/font-size",
+  "authors": [
+    "airton"
+  ],
+  "description": "Plugin jQuery to increase or decrease font size",
+  "main": "js/jquery.fontsize.js",
+  "keywords": [
+    "font",
+    "size",
+    "text"
+  ],
+  "license": "MIT"
+}
